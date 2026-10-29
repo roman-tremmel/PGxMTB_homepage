@@ -41,7 +41,10 @@ document.getElementById('year').textContent = new Date().getFullYear();
   function item(p) {
     const href = link(p);
     const title = href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
-    const wps = (p.wp || []).map(w => `<span class="pub-wp" style="--c: var(--${esc(w.toLowerCase())})">${esc(w)}</span>`).join('');
+    const buttons = [
+      p.pmid ? `<a class="pub-btn" href="https://pubmed.ncbi.nlm.nih.gov/${esc(p.pmid)}/" target="_blank" rel="noopener">PubMed</a>` : '',
+      p.pdf ? `<a class="pub-btn" href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF</a>` : ''
+    ].join('');
     return `<article class="pub${p.example ? ' is-example' : ''}">
       <div class="pub-meta">
         <span class="pub-type pub-type-${esc(p.type)}">${TYPES[p.type] || TYPES.other}</span>
@@ -52,7 +55,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
       <p class="pub-authors">${esc(p.authors)}</p>
       <p class="pub-venue"><em>${esc(p.venue)}</em>${p.details ? ' · ' + esc(p.details) : ''}</p>
       <div class="pub-foot">
-        ${wps}
+        ${buttons}
         ${p.doi ? `<a class="pub-doi" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">doi:${esc(p.doi)}</a>` : ''}
       </div>
     </article>`;

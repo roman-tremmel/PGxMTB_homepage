@@ -11,44 +11,23 @@
  *   venue    journal, preprint server or conference
  *   details  optional: volume(issue):pages, poster/talk, etc.
  *   doi      optional: DOI without "https://doi.org/"
- *   url      optional: link used when there is no DOI (e.g. PDF of a poster)
+ *   pmid     optional: PubMed ID, adds a "PubMed" button
+ *   pdf      optional: link to a PDF, adds a "PDF" button. Either a full URL or
+ *            a file placed in assets/pdf/, e.g. "assets/pdf/tremmel-2025.pdf"
+ *            (only upload PDFs you are allowed to share, e.g. open access)
+ *   url      optional: link used for the title when there is no DOI
  *   openAccess  optional: true if freely available
- *   wp       optional: related work packages, e.g. ["WP1", "WP3"]
- *   example  only for the placeholder entries below – delete these entries
- *            once the first real publication is added
  */
 window.PGXMTB_PUBLICATIONS = [
   {
-    example: true,
     type: "article",
-    year: 2027,
-    authors: "Author A, Author B, Author C, PGxMTB consortium",
-    title: "Example entry: germline and somatic pharmacogenomic profiles of patients discussed in a molecular tumour board",
-    venue: "Journal name",
-    details: "12(3):100–110",
-    doi: "",
-    openAccess: true,
-    wp: ["WP1"]
-  },
-  {
-    example: true,
-    type: "preprint",
-    year: 2027,
-    authors: "Author D, Author E, PGxMTB consortium",
-    title: "Example entry: functional characterisation of rare variants in pharmacogenes",
-    venue: "bioRxiv",
-    doi: "",
-    openAccess: true,
-    wp: ["WP2"]
-  },
-  {
-    example: true,
-    type: "conference",
-    year: 2026,
-    authors: "Author F, Author G",
-    title: "Example entry: implementing pharmacogenomics in molecular tumour boards – the PGxMTB project",
-    venue: "Conference name, City",
-    details: "Poster",
-    wp: ["WP5"]
+    year: 2025,
+    authors: "Tremmel R, Hübschmann D, Schaeffeler E, Pirmann S, Fröhling S, Schwab M",
+    title: "Innovation in cancer pharmacotherapy through integrative consideration of germline and tumor genomes",
+    venue: "Pharmacol Rev",
+    details: "2025;77:100014",
+    doi: "10.1124/pharmrev.124.001049",
+    pmid: "39952686",
+    pdf: ""
   }
 ];

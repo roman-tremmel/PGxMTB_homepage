@@ -230,7 +230,12 @@ h3 { font-size: 1.15rem; }
 .pub-oa, .pub-example { font-size: .72rem; font-weight: 700; padding: 1px 6px; }
 .pub-oa { color: var(--wp6); border: 1px solid var(--wp6); }
 .pub-example { color: var(--wp4); border: 1px dashed var(--wp4); }
-.pub-wp { font-size: .75rem; font-weight: 700; color: var(--white); background: var(--c); padding: 1px 9px; }
+.pub-foot { gap: 10px 14px; }
+.pub-btn {
+  font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; text-decoration: none;
+  color: var(--navy); border: 2px solid var(--navy); padding: 4px 12px;
+}
+.pub-btn:hover { background: var(--navy); color: var(--white); }
 .pub-doi { font-size: .88rem; overflow-wrap: anywhere; }
 .pub-empty { color: var(--muted); padding-block: 24px; }
 

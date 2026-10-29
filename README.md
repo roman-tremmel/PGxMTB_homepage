@@ -14,8 +14,8 @@ No build step: open `index.html` locally, or serve the folder with any static ho
 
 Edit `assets/js/publications.js` and add one entry per publication (the fields are
 explained at the top of the file). The page sorts them by year and builds the
-filters and counts automatically. Delete the three `example: true` entries once
-the first real publication is in.
+filters and counts automatically. A `pmid` adds a PubMed button, a `pdf` (URL or
+file in `assets/pdf/`) adds a PDF button.
 
 ## GitHub Pages
 
