@@ -11,25 +11,23 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="#top" class="brand" aria-label="PGxMTB home">
-      <img src="assets/img/pgxmtb-logo.png" alt="PGxMTB" width="180" height="35">
+<!-- Top bar with the logo tab hanging over the hero -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-funder" href="https://www.eppermed.eu/" target="_blank" rel="noopener">
+      <span class="topbar-funder-label">Funded by</span>
+      <span class="topbar-funder-name">EP PerMed</span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <nav id="site-nav" class="site-nav">
-      <a href="#about">About</a>
-      <a href="#objectives">Objectives</a>
-      <a href="#work-packages">Work packages</a>
-      <a href="#consortium">Consortium</a>
-      <a href="#publications">Publications</a>
+    <a href="#top" class="logo-tab" aria-label="PGxMTB home">
+      <img src="assets/img/pgxmtb-logo.png" alt="PGxMTB" width="220" height="43">
+      <span>Pharmacogenomics in<br>Molecular Tumour Boards</span>
+    </a>
+    <nav class="topbar-links" aria-label="Service">
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -40,141 +38,96 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <ul class="dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
-        <h1>Pharmacogenomics for safer and more effective cancer therapy</h1>
-        <p class="lead">
-          Implementation of pharmacogenomics (PGx) into molecular tumour boards (MTBs) in Europe:
-          improved prediction of PGx phenotypes using germline and tumour multiomics data.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#about">Learn more</a>
-          <a class="btn btn-ghost" href="#consortium">Meet the consortium</a>
-        </div>
-      </div>
-      <div class="hero-graphic" aria-hidden="true">
-        <svg viewBox="0 0 300 300" role="img">
-          <g stroke="#ffffff" stroke-width="6" stroke-linecap="round">
-            <line x1="150" y1="150" x2="150" y2="40"/>
-            <line x1="150" y1="150" x2="228" y2="72"/>
-            <line x1="150" y1="150" x2="260" y2="150"/>
-            <line x1="150" y1="150" x2="228" y2="228"/>
-            <line x1="150" y1="150" x2="150" y2="260"/>
-            <line x1="150" y1="150" x2="72" y2="228"/>
-            <line x1="150" y1="150" x2="40" y2="150"/>
-            <line x1="150" y1="150" x2="72" y2="72"/>
-          </g>
-          <circle cx="150" cy="150" r="36" fill="#ffffff"/>
-          <g stroke="#ffffff" stroke-width="5">
-            <circle cx="150" cy="40" r="20" fill="#0E8A86"/>
-            <circle cx="228" cy="72" r="20" fill="#2A63A8"/>
-            <circle cx="260" cy="150" r="20" fill="#6B4F9A"/>
-            <circle cx="228" cy="228" r="20" fill="#D0573F"/>
-            <circle cx="150" cy="260" r="20" fill="#A8740F"/>
-            <circle cx="72" cy="228" r="20" fill="#3D8241"/>
-            <circle cx="40" cy="150" r="20" fill="#9CA3AF"/>
-            <circle cx="72" cy="72" r="20" fill="#9CA3AF"/>
-          </g>
-        </svg>
-      </div>
+    <img class="hero-bg" src="assets/img/hero-network.svg" alt="" aria-hidden="true">
+    <div class="hero-content">
+      <h1>Pharmacogenomics for safer and more effective cancer therapy</h1>
+      <p>Implementation of pharmacogenomics (PGx) into molecular tumour boards in Europe</p>
     </div>
+  </section>
+
+  <!-- Main navigation -->
+  <nav class="mainnav" aria-label="Main">
+    <div class="mainnav-inner">
+      <a href="#about">Project</a>
+      <a href="#objectives">Objectives</a>
+      <a href="#work-packages">Work packages</a>
+      <a href="#consortium">Consortium</a>
+      <a href="#publications">Publications</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- About -->
+  <section id="about" class="section">
     <div class="container">
-      <div class="funded-badge">
-        <span>Funded by</span>
-        <a href="https://www.eppermed.eu/" target="_blank" rel="noopener">
-          <img src="assets/img/eppermed.png" alt="EP PerMed – European Partnership for Personalised Medicine" width="160" height="48">
-        </a>
+      <h2>Bringing pharmacogenomics to the molecular tumour board</h2>
+      <p class="intro">
+        Molecular tumour boards recommend targeted therapies based on the molecular profile of a tumour.
+        <strong>PGxMTB is the first EU project to systematically integrate pharmacogenomics into these decisions</strong>,
+        so that inherited and tumour-specific variation in drug metabolism and drug targets is taken into account.
+      </p>
+      <div class="about-cols">
+        <p>
+          How well a patient tolerates and responds to a cancer drug depends on genes that govern drug absorption,
+          distribution, metabolism and excretion (ADME) and on drug targets &ndash; the field of pharmacogenomics (PGx).
+          This information is rarely considered in molecular tumour board decisions today.
+        </p>
+        <p>
+          Building on germline and tumour multiomics data from the precision oncology programmes
+          <strong>DKFZ/NCT/DKTK MASTER</strong> and <strong>MAPPYACTS1/2</strong>, the consortium develops a PGx pipeline
+          covering more than 300 pharmacogenes, validates it in adult and paediatric cohorts, explores liver-derived
+          extracellular vesicles as a liquid biopsy of hepatic drug metabolism, and prepares clinical implementation
+          together with patient representatives.
+        </p>
       </div>
+      <a class="more" href="#objectives">Our objectives</a>
     </div>
   </section>
 
   <!-- Key facts -->
   <section class="facts" aria-label="Key facts">
     <div class="container facts-grid">
-      <div class="fact"><strong>36</strong><span>months<br>04/2026 – 03/2029</span></div>
+      <div class="fact"><strong>36</strong><span>months · 04/2026 – 03/2029</span></div>
       <div class="fact"><strong>6</strong><span>partners</span></div>
-      <div class="fact"><strong>4</strong><span>countries<br>DE · SE · FR · AT</span></div>
-      <div class="fact"><strong>300+</strong><span>pharmacogenes<br>in focus</span></div>
+      <div class="fact"><strong>4</strong><span>countries · DE SE FR AT</span></div>
+      <div class="fact"><strong>300+</strong><span>pharmacogenes</span></div>
       <div class="fact"><strong>6</strong><span>work packages</span></div>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="container two-col">
-      <div>
-        <p class="eyebrow">About the project</p>
-        <h2>Bringing pharmacogenomics to the molecular tumour board</h2>
-      </div>
-      <div class="prose">
-        <p>
-          Molecular tumour boards (MTBs) recommend targeted therapies based on the molecular profile of a patient's tumour.
-          Yet how well a patient tolerates and responds to a drug also depends on inherited and tumour-specific variation
-          in genes that govern drug absorption, distribution, metabolism and excretion (ADME) and drug targets &ndash;
-          the field of <strong>pharmacogenomics (PGx)</strong>. This information is rarely considered in MTB decisions today.
-        </p>
-        <p>
-          <strong>PGxMTB</strong> is the first EU project to systematically integrate PGx into molecular tumour boards.
-          Building on germline and tumour multiomics data from the nationwide precision oncology programmes
-          <strong>DKFZ/NCT/DKTK MASTER</strong> and <strong>MAPPYACTS1/2</strong>, the consortium develops a PGx pipeline
-          covering more than 300 pharmacogenes relevant for cancer and supportive care medicines, validates it in
-          adult and paediatric cohorts, and explores liver-derived extracellular vesicles as a liquid-biopsy readout
-          of hepatic drug metabolism.
-        </p>
-        <p>
-          Together with patient representatives as research partners, PGxMTB prepares the clinical implementation of
-          PGx in MTBs at two leading cancer centres and evaluates its health-economic impact.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- Objectives -->
-  <section id="objectives" class="section section-tint">
+  <section id="objectives" class="section">
     <div class="container">
-      <p class="eyebrow">Objectives</p>
-      <h2>What we aim to achieve</h2>
-      <div class="cards cards-3">
-        <article class="card">
-          <div class="card-icon" style="--c: var(--wp1)">
-            <svg viewBox="0 0 24 24"><path d="M7 3c0 6 10 6 10 12s-10 6-10 6M17 3c0 6-10 6-10 12s10 6 10 6M8 7h8M8 17h8" /></svg>
-          </div>
+      <h2 class="center">What we aim to achieve</h2>
+      <div class="tiles">
+        <article class="tile" style="--c: var(--wp1)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3c0 6 10 6 10 12s-10 6-10 6M17 3c0 6-10 6-10 12s10 6 10 6M8 7h8M8 17h8"/></svg>
           <h3>Predict PGx phenotypes</h3>
           <p>Combine germline and somatic variants with tumour multiomics data to predict drug response and toxicity, including the impact of rare variants.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" style="--c: var(--wp2)">
-            <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M7.5 14h9" /></svg>
-          </div>
+        <article class="tile" style="--c: var(--wp2)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M7.5 14h9"/></svg>
           <h3>Validate in independent cohorts</h3>
           <p>Confirm functional variants experimentally and validate PGx and drug-target signatures in adult and paediatric cancer patients.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" style="--c: var(--wp4)">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="20" r="2"/><path d="M10 10.5 6.5 7.5M14 10.5l3.5-3M12 15v3"/></svg>
-          </div>
+        <article class="tile" style="--c: var(--wp4)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="20" r="2"/><path d="M10 10.5 6.5 7.5M14 10.5l3.5-3M12 15v3"/></svg>
           <h3>Measure liver phenotypes</h3>
           <p>Use liver-derived extracellular vesicles as a minimally invasive liquid biopsy to capture hepatic drug metabolism in patients with cancer.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" style="--c: var(--wp5)">
-            <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c0-3.5 2.5-6 5.5-6s5.5 2.5 5.5 6M13.5 15.5c1-.9 2.2-1.5 3.5-1.5 2.6 0 4.5 2.2 4.5 5"/></svg>
-          </div>
+        <article class="tile" style="--c: var(--wp5)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c0-3.5 2.5-6 5.5-6s5.5 2.5 5.5 6M13.5 15.5c1-.9 2.2-1.5 3.5-1.5 2.6 0 4.5 2.2 4.5 5"/></svg>
           <h3>Implement in clinical practice</h3>
-          <p>Establish a framework for PGx reporting in MTBs in Heidelberg and Paris, and train healthcare providers.</p>
+          <p>Establish a framework for PGx reporting in molecular tumour boards in Heidelberg and Paris, and train healthcare providers.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" style="--c: var(--wp3)">
-            <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9.5C1.7 8 4 4.5 7.5 4.5c2 0 3.5 1.2 4.5 2.7 1-1.5 2.5-2.7 4.5-2.7C20 4.5 22.3 8 21 11.5 19 16.5 12 21 12 21Z"/></svg>
-          </div>
+        <article class="tile" style="--c: var(--wp3)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.5-9-9.5C1.7 8 4 4.5 7.5 4.5c2 0 3.5 1.2 4.5 2.7 1-1.5 2.5-2.7 4.5-2.7C20 4.5 22.3 8 21 11.5 19 16.5 12 21 12 21Z"/></svg>
           <h3>Involve patients</h3>
           <p>Engage patient representatives as research partners and develop materials that help patients understand PGx.</p>
         </article>
-        <article class="card">
-          <div class="card-icon" style="--c: var(--wp6)">
-            <svg viewBox="0 0 24 24"><path d="M3 20h18M6 16v-4M11 16V8M16 16v-6M20 5l-5 4-4-3-6 4"/></svg>
-          </div>
+        <article class="tile" style="--c: var(--wp6)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 16v-4M11 16V8M16 16v-6M20 5l-5 4-4-3-6 4"/></svg>
           <h3>Evaluate the value</h3>
           <p>Assess the health-economic impact of implementing PGx in molecular tumour boards across European health systems.</p>
         </article>
@@ -183,13 +136,12 @@
   </section>
 
   <!-- Work packages -->
-  <section id="work-packages" class="section">
+  <section id="work-packages" class="section section-tint">
     <div class="container">
-      <p class="eyebrow">Work packages</p>
-      <h2>How the project is organised</h2>
+      <h2>Work packages</h2>
       <div class="wp-grid">
         <article class="wp" style="--c: var(--wp1)">
-          <header><span class="wp-num">WP1</span><span class="wp-lead">Lead: IKP</span></header>
+          <span class="wp-num">WP1</span>
           <h3>PGx pipeline &amp; multiomics in MASTER</h3>
           <p>Refinement of a PGx pipeline for prediction of PGx phenotypes and drug targets in cancer patients, complemented by multiomics data in MASTER.</p>
           <details>
@@ -200,9 +152,10 @@
               <li><b>T1.3</b> PGx landscaping in multiomics data and identification of novel PGx signatures related to cancer drugs</li>
             </ul>
           </details>
+          <span class="wp-lead">Lead: IKP Stuttgart</span>
         </article>
         <article class="wp" style="--c: var(--wp2)">
-          <header><span class="wp-num">WP2</span><span class="wp-lead">Lead: Karolinska Institutet</span></header>
+          <span class="wp-num">WP2</span>
           <h3>Functional impact of rare PGx variation</h3>
           <p>Assessment of the functional impact of rare pharmacogenetic variation.</p>
           <details>
@@ -212,9 +165,10 @@
               <li><b>T2.2</b> In vitro experimental validation of candidate functional variants underlying ADME phenotypes</li>
             </ul>
           </details>
+          <span class="wp-lead">Lead: Karolinska Institutet</span>
         </article>
         <article class="wp" style="--c: var(--wp3)">
-          <header><span class="wp-num">WP3</span><span class="wp-lead">Lead: Gustave Roussy</span></header>
+          <span class="wp-num">WP3</span>
           <h3>Validation &amp; paediatric extension</h3>
           <p>Validation of multiomics data of pharmacogenes from MASTER in RATIONALE and extension to a paediatric and adolescent population from MAPPYACTS1/2.</p>
           <details>
@@ -224,9 +178,10 @@
               <li><b>T3.2</b> Extension to a paediatric and adolescent population from MAPPYACTS1/2</li>
             </ul>
           </details>
+          <span class="wp-lead">Lead: Gustave Roussy</span>
         </article>
         <article class="wp" style="--c: var(--wp4)">
-          <header><span class="wp-num">WP4</span><span class="wp-lead">Lead: IKP</span></header>
+          <span class="wp-num">WP4</span>
           <h3>Hepatic PGx phenotypes via liver EVs</h3>
           <p>Elucidation of hepatic PGx phenotypes of cancer patients using liver-derived extracellular vesicles to assess the impact of tumours.</p>
           <details>
@@ -236,9 +191,10 @@
               <li><b>T4.2</b> PGx phenotyping of liver EVs using proteomics, metabolomics and epigenetics</li>
             </ul>
           </details>
+          <span class="wp-lead">Lead: IKP Stuttgart</span>
         </article>
         <article class="wp" style="--c: var(--wp5)">
-          <header><span class="wp-num">WP5</span><span class="wp-lead">Lead: DKFZ / NCT Heidelberg</span></header>
+          <span class="wp-num">WP5</span>
           <h3>PGx implementation in MTBs &amp; patient participation</h3>
           <p>Development of an implementation approach for PGx information in MTBs and involvement of patient participation.</p>
           <details>
@@ -248,85 +204,80 @@
               <li><b>T5.2</b> Enhancing patient engagement and training of healthcare providers for PGx</li>
             </ul>
           </details>
+          <span class="wp-lead">Lead: DKFZ / NCT Heidelberg</span>
         </article>
         <article class="wp" style="--c: var(--wp6)">
-          <header><span class="wp-num">WP6</span><span class="wp-lead">Lead: UMIT TIROL</span></header>
+          <span class="wp-num">WP6</span>
           <h3>Health economic evaluation</h3>
           <p>Health economic (HE) evaluation of the PGx implementation in molecular tumour boards.</p>
+          <span class="wp-lead">Lead: UMIT TIROL</span>
         </article>
       </div>
     </div>
   </section>
 
   <!-- Consortium -->
-  <section id="consortium" class="section section-tint">
+  <section id="consortium" class="section">
     <div class="container">
-      <p class="eyebrow">Consortium</p>
-      <h2>Six partners from four European countries</h2>
+      <h2>Consortium</h2>
+      <p class="section-lead">Six partners from Germany, Sweden, France and Austria, including a patient organisation.</p>
       <div class="partners">
         <article class="partner">
           <div class="partner-logo"><img src="assets/img/ikp.png" alt="IKP Stuttgart" loading="lazy"></div>
-          <div class="partner-body">
-            <span class="tag">Coordinator · Germany</span>
-            <h3>Dr. Margarete Fischer-Bosch Institute of Clinical Pharmacology (IKP), Stuttgart</h3>
-            <p>PIs: Matthias Schwab, Roman Tremmel</p>
-          </div>
+          <span class="tag">Coordinator · Germany</span>
+          <h3>Dr. Margarete Fischer-Bosch Institute of Clinical Pharmacology (IKP), Stuttgart</h3>
+          <p>PIs: Matthias Schwab, Roman Tremmel</p>
+          <a class="more" href="https://www.ikp.de/en" target="_blank" rel="noopener">Website</a>
         </article>
         <article class="partner">
           <div class="partner-logo partner-logo-duo">
             <img src="assets/img/nct.png" alt="NCT Heidelberg" loading="lazy">
             <img src="assets/img/dkfz.png" alt="German Cancer Research Center (DKFZ)" loading="lazy">
           </div>
-          <div class="partner-body">
-            <span class="tag">Germany</span>
-            <h3>German Cancer Research Center (DKFZ) &amp; National Center for Tumor Diseases (NCT) Heidelberg</h3>
-            <p>PIs: Stefan Fröhling, Daniel Hübschmann</p>
-          </div>
+          <span class="tag">Germany</span>
+          <h3>German Cancer Research Center (DKFZ) &amp; National Center for Tumor Diseases (NCT) Heidelberg</h3>
+          <p>PIs: Stefan Fröhling, Daniel Hübschmann</p>
+          <a class="more" href="https://www.nct-heidelberg.de" target="_blank" rel="noopener">Website</a>
         </article>
         <article class="partner">
           <div class="partner-logo"><img src="assets/img/karolinska.png" alt="Karolinska Institutet" loading="lazy"></div>
-          <div class="partner-body">
-            <span class="tag">Sweden</span>
-            <h3>Karolinska Institutet, Stockholm</h3>
-            <p>PI: Volker Lauschke</p>
-          </div>
+          <span class="tag">Sweden</span>
+          <h3>Karolinska Institutet, Stockholm</h3>
+          <p>PI: Volker Lauschke</p>
+          <a class="more" href="https://ki.se" target="_blank" rel="noopener">Website</a>
         </article>
         <article class="partner">
           <div class="partner-logo partner-logo-duo">
             <img src="assets/img/gustave-roussy.png" alt="Gustave Roussy" loading="lazy">
             <img src="assets/img/inserm.png" alt="Inserm" loading="lazy">
           </div>
-          <div class="partner-body">
-            <span class="tag">France</span>
-            <h3>Gustave Roussy Cancer Campus Grand Paris</h3>
-            <p>PI: Birgit Geoerger</p>
-          </div>
+          <span class="tag">France</span>
+          <h3>Gustave Roussy Cancer Campus Grand Paris</h3>
+          <p>PI: Birgit Geoerger</p>
+          <a class="more" href="https://www.gustaveroussy.fr" target="_blank" rel="noopener">Website</a>
         </article>
         <article class="partner">
           <div class="partner-logo"><img src="assets/img/sarkome.png" alt="Deutsche Sarkom-Stiftung" loading="lazy"></div>
-          <div class="partner-body">
-            <span class="tag">Patient organisation · Germany</span>
-            <h3>German Sarcoma Foundation, Wölfersheim</h3>
-            <p>PI: Markus Wartenberg</p>
-          </div>
+          <span class="tag">Patient organisation · Germany</span>
+          <h3>German Sarcoma Foundation, Wölfersheim</h3>
+          <p>PI: Markus Wartenberg</p>
+          <a class="more" href="https://www.sarkome.de" target="_blank" rel="noopener">Website</a>
         </article>
         <article class="partner">
           <div class="partner-logo"><img src="assets/img/umit-tirol.png" alt="UMIT TIROL" loading="lazy"></div>
-          <div class="partner-body">
-            <span class="tag">Austria</span>
-            <h3>UMIT TIROL – University for Health Sciences and Technology, Hall in Tirol</h3>
-            <p>PI: Beate Jahn</p>
-          </div>
+          <span class="tag">Austria</span>
+          <h3>UMIT TIROL – University for Health Sciences and Technology, Hall in Tirol</h3>
+          <p>PI: Beate Jahn</p>
+          <a class="more" href="https://www.umit-tirol.at" target="_blank" rel="noopener">Website</a>
         </article>
       </div>
     </div>
   </section>
 
   <!-- Publications (entries live in assets/js/publications.js) -->
-  <section id="publications" class="section">
+  <section id="publications" class="section section-tint">
     <div class="container">
-      <p class="eyebrow">Publications</p>
-      <h2>Results from the project</h2>
+      <h2>Publications</h2>
       <div class="pub-toolbar">
         <div class="pub-filters" role="group" aria-label="Filter by type">
           <button type="button" class="chip is-active" data-type="all">All <span></span></button>
@@ -344,10 +295,9 @@
   </section>
 
   <!-- News -->
-  <section id="news" class="section section-tint">
+  <section id="news" class="section">
     <div class="container">
-      <p class="eyebrow">News &amp; events</p>
-      <h2>Latest updates</h2>
+      <h2>News &amp; events</h2>
       <div class="news">
         <article class="news-item">
           <time datetime="2026-10-28">28 Oct 2026</time>
@@ -364,21 +314,56 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section contact">
-    <div class="container two-col">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Get in touch</h2>
-        <p>Interested in PGxMTB, our data or a collaboration? Contact the project coordination team.</p>
+  <section id="contact" class="section section-flush">
+    <div class="container">
+      <div class="contact-panel">
+        <div class="contact-graphic" aria-hidden="true">
+          <svg viewBox="0 0 300 300">
+            <g stroke="#0C2D58" stroke-width="6" stroke-linecap="round">
+              <line x1="150" y1="150" x2="150" y2="40"/><line x1="150" y1="150" x2="228" y2="72"/>
+              <line x1="150" y1="150" x2="260" y2="150"/><line x1="150" y1="150" x2="228" y2="228"/>
+              <line x1="150" y1="150" x2="150" y2="260"/><line x1="150" y1="150" x2="72" y2="228"/>
+              <line x1="150" y1="150" x2="40" y2="150"/><line x1="150" y1="150" x2="72" y2="72"/>
+            </g>
+            <circle cx="150" cy="150" r="34" fill="#0C2D58"/>
+            <circle cx="150" cy="40" r="20" fill="#0E8A86"/><circle cx="228" cy="72" r="20" fill="#2A63A8"/>
+            <circle cx="260" cy="150" r="20" fill="#6B4F9A"/><circle cx="228" cy="228" r="20" fill="#D0573F"/>
+            <circle cx="150" cy="260" r="20" fill="#A8740F"/><circle cx="72" cy="228" r="20" fill="#3D8241"/>
+            <circle cx="40" cy="150" r="20" fill="#9CA3AF"/><circle cx="72" cy="72" r="20" fill="#9CA3AF"/>
+          </svg>
+        </div>
+        <div class="contact-body">
+          <h2>Contact</h2>
+          <p><strong>Interested in PGxMTB, our data or a collaboration?</strong> Contact the project coordination team.</p>
+          <address>
+            Prof. Dr. Matthias Schwab<br>
+            Dr. Margarete Fischer-Bosch Institute of Clinical Pharmacology<br>
+            Auerbachstraße 112, 70376 Stuttgart, Germany
+          </address>
+          <a class="btn-outline" href="https://www.ikp.de/en" target="_blank" rel="noopener">Visit IKP website</a>
+        </div>
       </div>
-      <address class="contact-card">
-        <strong>Project coordination</strong><br>
-        Prof. Dr. Matthias Schwab<br>
-        Dr. Margarete Fischer-Bosch Institute of Clinical Pharmacology<br>
-        Auerbachstraße 112<br>
-        70376 Stuttgart, Germany<br>
-        <a href="https://www.ikp.de/en" target="_blank" rel="noopener">www.ikp.de</a>
-      </address>
+    </div>
+  </section>
+
+  <!-- Funding -->
+  <section class="section section-flush" aria-label="Funding">
+    <div class="container">
+      <div class="funding-panel">
+        <div class="funding-text">
+          <h2>Funded by EP PerMed</h2>
+          <p>
+            PGxMTB is funded under the frame of EP PerMed (Grant Agreement No. 101137129), which has received funding
+            from the European Union's Horizon Europe research and innovation programme, and by the participating national
+            funding organisations. Views and opinions expressed are those of the authors only and do not necessarily
+            reflect those of the European Union or the granting authorities.
+          </p>
+          <a class="more more-light" href="https://www.eppermed.eu/" target="_blank" rel="noopener">About EP PerMed</a>
+        </div>
+        <div class="funding-logo">
+          <img src="assets/img/eppermed.png" alt="EP PerMed – European Partnership for Personalised Medicine" width="240" height="72">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -386,105 +371,16 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="footer-funding">
-      <img src="assets/img/eppermed.png" alt="EP PerMed" width="170" height="51" class="footer-eppermed">
-      <p>
-        PGxMTB is funded under the frame of EP PerMed (Grant Agreement No. 101137129), which has received
-        funding from the European Union's Horizon Europe research and innovation programme, and by the
-        participating national funding organisations. Views and opinions expressed are those of the authors only
-        and do not necessarily reflect those of the European Union or the granting authorities.
-      </p>
-    </div>
-    <div class="footer-bottom">
-      <img src="assets/img/pgxmtb-logo-white.png" alt="PGxMTB" width="120" height="24">
-      <span>&copy; <span id="year">2026</span> PGxMTB consortium</span>
-      <nav class="footer-links">
-        <a href="#">Imprint</a>
-        <a href="#">Privacy policy</a>
-      </nav>
-    </div>
+    <img src="assets/img/pgxmtb-logo-white.png" alt="PGxMTB" width="120" height="24">
+    <span>&copy; <span id="year">2026</span> PGxMTB consortium</span>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="#">Imprint</a>
+      <a href="#">Privacy policy</a>
+    </nav>
   </div>
 </footer>
 
 <script src="assets/js/publications.js"></script>
-<script>
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('site-nav');
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', false);
-  }));
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Publications
-  (function () {
-    const TYPES = { article: 'Journal article', preprint: 'Preprint', conference: 'Conference', other: 'Other' };
-    const pubs = (window.PGXMTB_PUBLICATIONS || []).slice().sort((a, b) => b.year - a.year);
-    const list = document.getElementById('pub-list');
-    const search = document.getElementById('pub-search');
-    const chips = document.querySelectorAll('.pub-filters .chip');
-    let type = 'all';
-
-    const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    const link = p => p.doi ? 'https://doi.org/' + p.doi : (p.url || '');
-
-    chips.forEach(chip => {
-      const t = chip.dataset.type;
-      const n = t === 'all' ? pubs.length : pubs.filter(p => p.type === t).length;
-      chip.querySelector('span').textContent = n;
-      chip.hidden = t !== 'all' && n === 0;
-      chip.addEventListener('click', () => {
-        type = t;
-        chips.forEach(c => c.classList.toggle('is-active', c === chip));
-        render();
-      });
-    });
-    search.addEventListener('input', render);
-
-    function item(p) {
-      const href = link(p);
-      const title = href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
-      const wps = (p.wp || []).map(w => `<span class="pub-wp" style="--c: var(--${esc(w.toLowerCase())})">${esc(w)}</span>`).join('');
-      return `<article class="pub${p.example ? ' is-example' : ''}">
-        <div class="pub-meta">
-          <span class="pub-type pub-type-${esc(p.type)}">${TYPES[p.type] || TYPES.other}</span>
-          ${p.openAccess ? '<span class="pub-oa">Open access</span>' : ''}
-          ${p.example ? '<span class="pub-example">Example entry</span>' : ''}
-        </div>
-        <h3>${title}</h3>
-        <p class="pub-authors">${esc(p.authors)}</p>
-        <p class="pub-venue"><em>${esc(p.venue)}</em>${p.details ? ' · ' + esc(p.details) : ''}</p>
-        <div class="pub-foot">
-          ${wps}
-          ${p.doi ? `<a class="pub-doi" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">doi:${esc(p.doi)}</a>` : ''}
-        </div>
-      </article>`;
-    }
-
-    function render() {
-      const q = search.value.trim().toLowerCase();
-      const shown = pubs.filter(p => (type === 'all' || p.type === type) &&
-        (!q || [p.title, p.authors, p.venue].join(' ').toLowerCase().includes(q)));
-      if (!pubs.length) {
-        list.innerHTML = '<p class="pub-empty">The first PGxMTB publications are in preparation and will be listed here.</p>';
-        return;
-      }
-      if (!shown.length) {
-        list.innerHTML = '<p class="pub-empty">No publications match your search.</p>';
-        return;
-      }
-      const years = [...new Set(shown.map(p => p.year))];
-      list.innerHTML = years.map(y => `<div class="pub-year">
-          <h3 class="pub-year-label">${y}</h3>
-          <div class="pub-items">${shown.filter(p => p.year === y).map(item).join('')}</div>
-        </div>`).join('');
-    }
-    render();
-  })();
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
