@@ -8,3 +8,15 @@ Static one-page website for the PGxMTB consortium (funded under EP PerMed).
 
 No build step: open `index.html` locally, or serve the folder with any static host
 (e.g. GitHub Pages: Settings → Pages → deploy from branch, root folder).
+
+## Adding publications
+
+Edit `assets/js/publications.js` and add one entry per publication (the fields are
+explained at the top of the file). The page sorts them by year and builds the
+filters and counts automatically. Delete the three `example: true` entries once
+the first real publication is in.
+
+## GitHub Pages
+
+The site is served at https://roman-tremmel.github.io/PGxMTB_homepage/
+(the path is case-sensitive).
