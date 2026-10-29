@@ -304,3 +304,18 @@ h3 { font-size: 1.15rem; }
   .funding-text { padding: 32px 24px; }
   .footer-links { margin-left: 0; }
 }
+
+/* Legal pages (imprint, privacy statement) */
+.page-head { background: var(--navy); color: var(--white); padding: 84px 0 44px; }
+.page-head h1 { color: var(--white); font-size: clamp(2rem, 4vw, 2.8rem); margin: 0; }
+.page-head .more { margin-top: 14px; }
+.legal > * { max-width: 46em; }
+.legal h2 { font-size: 1.35rem; margin: 2em 0 .5em; }
+.legal h2:first-child { margin-top: 0; }
+.legal h3 { font-size: 1.08rem; margin: 1.4em 0 .4em; }
+.legal p, .legal ul { margin: 0 0 1em; }
+.legal ul { padding-left: 1.2em; }
+.legal li { margin-bottom: .3em; }
+.legal address { font-style: normal; margin: 0 0 1em; }
+.legal a { overflow-wrap: anywhere; }
+.legal .note { font-size: .9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1em; margin-top: 2.5em; }
