@@ -23,3 +23,11 @@ file in `assets/pdf/`) adds a PDF button.
 
 The site is served at https://roman-tremmel.github.io/PGxMTB_homepage/
 (the path is case-sensitive).
+
+## For patients
+
+The "For patients" section (`#patients` in `index.html`) has an English and a
+German version; edit both `data-lang="en"` and `data-lang="de"` blocks together.
+Link German-speaking patients directly to
+https://roman-tremmel.github.io/PGxMTB_homepage/#patienten – this opens the
+section in German.

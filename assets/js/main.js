@@ -81,3 +81,22 @@ document.getElementById('year').textContent = new Date().getFullYear();
   }
   render();
 })();
+
+// For patients: English / German switch. A link to #patienten opens the German version.
+(function () {
+  const section = document.getElementById('patients');
+  const buttons = section.querySelectorAll('[data-set-lang]');
+  function setLang(lang) {
+    section.querySelectorAll('[data-lang]').forEach(el => { el.hidden = el.dataset.lang !== lang; });
+    buttons.forEach(b => b.setAttribute('aria-pressed', b.dataset.setLang === lang));
+  }
+  buttons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.setLang)));
+  function fromHash() {
+    if (location.hash === '#patienten') {
+      setLang('de');
+      section.scrollIntoView();
+    }
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+})();
