@@ -14,11 +14,11 @@ homepage:
   - { id: about,         enabled: true }
   - { id: facts,         enabled: true }
   - { id: objectives,    enabled: true }
-  - { id: work-packages, enabled: true }
+  - { id: patients,      enabled: true }
   - { id: consortium,    enabled: true }
   - { id: publications,  enabled: true }
   - { id: news,          enabled: true }
-  - { id: patients,      enabled: true }
+  - { id: work-packages, enabled: true }
   - { id: contact,       enabled: true }
   - { id: funding,       enabled: true }
 
