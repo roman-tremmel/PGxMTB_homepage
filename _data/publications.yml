@@ -1,24 +1,24 @@
-# PGxMTB publications – newest year is shown first automatically.
+# Publications – additions and corrections
 #
-# Copy an entry (starting with "- type:") and fill in the fields:
-#   type        article | preprint | conference | other
-#   year        publication year
-#   authors     author list as it should be printed
-#   title       full title
-#   venue       journal, preprint server or conference
-#   details     optional: volume/pages, "Poster", "Talk", …
-#   doi         optional: DOI without https://doi.org/  (title links to it)
-#   pmid        optional: PubMed ID -> "PubMed" button
-#   pdf         optional: full URL, or a file in assets/pdf/ such as assets/pdf/tremmel-2025.pdf
-#               -> "PDF" button (only PDFs you are allowed to share)
-#   url         optional: link for the title when there is no DOI
-#   openAccess  optional: true -> "Open access" label
+# Most publications come from the reference files in publications/ (RIS export
+# from Zotero, EndNote, Mendeley, Citavi … or PubMed .nbib). This file is for
+#
+#  1. extra fields or corrections for an imported publication – match it by DOI:
+#       - doi: 10.1124/pharmrev.124.001049
+#         pmid: "39952686"        # direct PubMed link
+#         openAccess: true        # "Open access" label
+#         pdf: assets/pdf/x.pdf   # PDF button (or a full URL)
+#         type: preprint          # article | preprint | conference | other
+#         hide: true              # do not show this publication
+#
+#  2. publications that are not in a reference file (e.g. a poster) – give at
+#     least type, year and title:
+#       - type: conference
+#         year: 2026
+#         authors: Tremmel R, Schwab M
+#         title: Title of the poster
+#         venue: Conference name, City
+#         details: Poster
 
-- type: article
-  year: 2025
-  authors: Tremmel R, Hübschmann D, Schaeffeler E, Pirmann S, Fröhling S, Schwab M
-  title: Innovation in cancer pharmacotherapy through integrative consideration of germline and tumor genomes
-  venue: Pharmacol Rev
-  details: 2025;77:100014
-  doi: 10.1124/pharmrev.124.001049
+- doi: 10.1124/pharmrev.124.001049
   pmid: "39952686"

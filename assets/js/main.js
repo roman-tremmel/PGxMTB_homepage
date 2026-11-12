@@ -13,11 +13,15 @@ document.getElementById('year').textContent = new Date().getFullYear();
   sections.forEach(s => observer.observe(s));
 })();
 
-// Publications (data from _data/publications.yml, inserted by _layouts/default.html)
+// Publications (list built by assets/js/references.js)
 (function () {
   if (!document.getElementById('pub-list')) return;  // section switched off
   const TYPES = { article: 'Journal article', preprint: 'Preprint', conference: 'Conference', other: 'Other' };
-  const pubs = (window.PGXMTB_PUBLICATIONS || []).slice().sort((a, b) => b.year - a.year);
+  const ORDER = ['article', 'preprint', 'conference', 'other'];
+  const rank = p => (ORDER.indexOf(p.type) + 1) || ORDER.length;
+  // newest year first; within a year articles, preprints, conference contributions, other
+  const pubs = (window.PGXMTB_PUBLICATIONS || []).slice()
+    .sort((a, b) => (b.year || 0) - (a.year || 0) || rank(a) - rank(b) || String(a.title).localeCompare(String(b.title)));
   const list = document.getElementById('pub-list');
   const search = document.getElementById('pub-search');
   const chips = document.querySelectorAll('.pub-filters .chip');
@@ -43,7 +47,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
     const href = link(p);
     const title = href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
     const buttons = [
-      p.pmid ? `<a class="pub-btn" href="https://pubmed.ncbi.nlm.nih.gov/${esc(p.pmid)}/" target="_blank" rel="noopener">PubMed</a>` : '',
+      // PubMed: direct link with a PMID, otherwise a PubMed search for the DOI (opens the article if found)
+      p.pmid ? `<a class="pub-btn" href="https://pubmed.ncbi.nlm.nih.gov/${esc(p.pmid)}/" target="_blank" rel="noopener">PubMed</a>`
+        : (p.doi && p.type === 'article') ? `<a class="pub-btn" href="https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(p.doi)}%5Bdoi%5D" target="_blank" rel="noopener">PubMed</a>` : '',
       p.pdf ? `<a class="pub-btn" href="${esc(p.pdf)}" target="_blank" rel="noopener">PDF</a>` : ''
     ].join('');
     return `<article class="pub${p.example ? ' is-example' : ''}">
