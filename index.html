@@ -20,16 +20,16 @@ layout: default
 {%- endcomment -%}
 {% if enabled_ids contains "publications" %}
 <script>
-window.PGXMTB_REF_FILES = [];
+window.PGXMTB_REF_URLS = [
 {%- for f in site.static_files %}
   {%- if f.path contains '/publications/' %}
     {%- if f.extname == '.ris' or f.extname == '.nbib' or f.extname == '.txt' %}
-      {%- assign rp = f.path | remove_first: site.source | remove_first: '/' %}
-      {%- capture ref_text %}{% include_relative {{ rp }} %}{% endcapture %}
-window.PGXMTB_REF_FILES.push({ name: {{ f.name | jsonify }}, text: {{ ref_text | jsonify }} });
+      {%- assign ref_path = f.path | remove_first: site.source %}
+  { name: {{ f.name | jsonify }}, url: {{ ref_path | relative_url | jsonify }} },
     {%- endif %}
   {%- endif %}
 {%- endfor %}
+];
 window.PGXMTB_PDF_FILES = [
 {%- for f in site.static_files %}{% if f.path contains '/assets/pdf/' and f.extname == '.pdf' %}
   {%- assign pdf_path = f.path | remove_first: site.source %}

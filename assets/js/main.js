@@ -14,13 +14,14 @@ document.getElementById('year').textContent = new Date().getFullYear();
 })();
 
 // Publications (list built by assets/js/references.js)
-(function () {
+(async function () {
   if (!document.getElementById('pub-list')) return;  // section switched off
+  const loaded = window.PGXMTB_loadPublications ? await window.PGXMTB_loadPublications() : (window.PGXMTB_PUBLICATIONS || []);
   const TYPES = { article: 'Journal article', preprint: 'Preprint', conference: 'Conference', other: 'Other' };
   const ORDER = ['article', 'preprint', 'conference', 'other'];
   const rank = p => (ORDER.indexOf(p.type) + 1) || ORDER.length;
   // newest year first; within a year articles, preprints, conference contributions, other
-  const pubs = (window.PGXMTB_PUBLICATIONS || []).slice()
+  const pubs = loaded.slice()
     .sort((a, b) => (b.year || 0) - (a.year || 0) || rank(a) - rank(b) || String(a.title).localeCompare(String(b.title)));
   const list = document.getElementById('pub-list');
   const search = document.getElementById('pub-search');

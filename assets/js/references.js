@@ -1,13 +1,13 @@
 /*
  * Builds the publication list from
  *   1. reference files in publications/ (RIS from Zotero, EndNote, Mendeley, Citavi …,
- *      or PubMed .nbib), inserted into the page by index.html as window.PGXMTB_REF_FILES
+ *      or PubMed .nbib). index.html lists them in window.PGXMTB_REF_URLS; they are
+ *      loaded here (window.PGXMTB_REF_FILES may hold their text instead, e.g. offline)
  *   2. _data/publications.yml (window.PGXMTB_PUBLICATIONS): manual entries, and
  *      corrections/extra fields for imported entries with the same DOI
- * The result replaces window.PGXMTB_PUBLICATIONS, which main.js renders.
+ * main.js calls window.PGXMTB_loadPublications() and renders the result.
  */
 (function () {
-  const files = window.PGXMTB_REF_FILES || [];
   const pdfFiles = window.PGXMTB_PDF_FILES || [];
   const yaml = window.PGXMTB_PUBLICATIONS || [];
 
@@ -122,20 +122,31 @@
     };
   }
 
-  // ---- merge -------------------------------------------------------------
-  const key = p => (p.doi ? 'doi:' + p.doi.toLowerCase() : 'title:' + String(p.title || '').toLowerCase().replace(/\W+/g, ''));
-  const byKey = new Map();
-  files.forEach(file => {
-    const parse = /\.nbib$/i.test(file.name) || /^PMID- /m.test(file.text) ? parseNBIB : parseRIS;
-    parse(file.text).forEach(p => { if (p.title && !byKey.has(key(p))) byKey.set(key(p), p); });
-  });
-  yaml.forEach(y => {
-    const entry = Object.fromEntries(Object.entries(y).filter(([, v]) => v !== null && v !== ''));
-    if (entry.doi) entry.doi = cleanDoi(entry.doi);
-    const k = key(entry), existing = byKey.get(k);
-    if (existing) Object.assign(existing, entry);          // correction / extra fields
-    else if (entry.title) byKey.set(k, entry);             // manual entry
-  });
+  // ---- load and merge ----------------------------------------------------
+  async function loadFiles() {
+    if (window.PGXMTB_REF_FILES) return window.PGXMTB_REF_FILES;
+    const urls = window.PGXMTB_REF_URLS || [];
+    const texts = await Promise.all(urls.map(f => fetch(f.url).then(r => (r.ok ? r.text() : '')).catch(() => '')));
+    return urls.map((f, i) => ({ name: f.name, text: texts[i] }));
+  }
 
-  window.PGXMTB_PUBLICATIONS = [...byKey.values()].filter(p => !p.hide);
+  const key = p => (p.doi ? 'doi:' + p.doi.toLowerCase() : 'title:' + String(p.title || '').toLowerCase().replace(/\W+/g, ''));
+  function merge(files) {
+    const byKey = new Map();
+    files.forEach(file => {
+      const parse = /\.nbib$/i.test(file.name) || /^PMID- /m.test(file.text) ? parseNBIB : parseRIS;
+      parse(file.text).forEach(p => { if (p.title && !byKey.has(key(p))) byKey.set(key(p), p); });
+    });
+    yaml.forEach(y => {
+      const entry = Object.fromEntries(Object.entries(y).filter(([, v]) => v !== null && v !== ''));
+      if (entry.doi) entry.doi = cleanDoi(entry.doi);
+      const k = key(entry), existing = byKey.get(k);
+      if (existing) Object.assign(existing, entry);          // correction / extra fields
+      else if (entry.title) byKey.set(k, entry);             // manual entry
+    });
+
+    return [...byKey.values()].filter(p => !p.hide);
+  }
+
+  window.PGXMTB_loadPublications = () => loadFiles().then(merge);
 })();
