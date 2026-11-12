@@ -1,0 +1,15 @@
+{% assign s = include.section %}
+<section class="section section-flush" aria-label="Funding">
+  <div class="container">
+    <div class="funding-panel">
+      <div class="funding-text">
+        <h2>{{ s.title }}</h2>
+        {{ s.text | markdownify }}
+        {% if s.link_text %}<a class="more more-light" href="{{ s.link_url }}" target="_blank" rel="noopener">{{ s.link_text }}</a>{% endif %}
+      </div>
+      <div class="funding-logo">
+        <img src="{{ '/assets/img/eppermed.png' | relative_url }}" alt="EP PerMed – European Partnership for Personalised Medicine" width="240" height="72">
+      </div>
+    </div>
+  </div>
+</section>

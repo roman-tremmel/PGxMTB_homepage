@@ -1,0 +1,22 @@
+{% assign s = include.section %}
+<section id="consortium" class="section">
+  <div class="container">
+    <h2>{{ s.title }}</h2>
+    {% if s.lead %}<p class="section-lead">{{ s.lead }}</p>{% endif %}
+    <div class="partners">
+      {%- for p in s.partners %}
+      <article class="partner">
+        <div class="partner-logo{% if p.logos.size > 1 %} partner-logo-duo{% endif %}">
+          {%- for l in p.logos %}
+          <img src="{{ l.file | prepend: '/assets/img/' | relative_url }}" alt="{{ l.alt }}" loading="lazy">
+          {%- endfor %}
+        </div>
+        <span class="tag">{{ p.tag }}</span>
+        <h3>{{ p.name }}</h3>
+        <p>{{ p.people }}</p>
+        {% if p.website %}<a class="more" href="{{ p.website }}" target="_blank" rel="noopener">Website</a>{% endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

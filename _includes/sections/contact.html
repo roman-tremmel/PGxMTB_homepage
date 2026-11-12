@@ -1,0 +1,16 @@
+{% assign s = include.section %}
+<section id="contact" class="section section-flush">
+  <div class="container">
+    <div class="contact-panel">
+      <div class="contact-graphic" aria-hidden="true">
+{% include hub.svg %}
+      </div>
+      <div class="contact-body">
+        <h2>{{ s.title }}</h2>
+        {{ s.lead | markdownify }}
+        <address>{{ s.address | strip | newline_to_br }}</address>
+        {% if s.button_text %}<a class="btn-outline" href="{{ s.button_url }}" target="_blank" rel="noopener">{{ s.button_text }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>

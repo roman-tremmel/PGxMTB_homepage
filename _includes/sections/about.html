@@ -1,0 +1,11 @@
+{% assign s = include.section %}
+<section id="about" class="section">
+  <div class="container">
+    <h2>{{ s.title }}</h2>
+    <div class="intro">{{ s.intro | markdownify }}</div>
+    <div class="about-cols">
+      {{ s.content }}
+    </div>
+    {% if s.link_text %}<a class="more" href="{{ s.link_url }}">{{ s.link_text }}</a>{% endif %}
+  </div>
+</section>

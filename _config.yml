@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------------------
+# PGxMTB website – master file
+#
+# The homepage shows the sections listed under "homepage" in this order.
+# Set "enabled: false" to hide a section; it then also disappears from the
+# menu. The texts of each section live in _sections/<id>.md, publications in
+# _data/publications.yml.
+#
+# After a change, GitHub Pages rebuilds the site automatically (about 1 min).
+# ---------------------------------------------------------------------------
+
+homepage:
+  - { id: hero,          enabled: true }
+  - { id: about,         enabled: true }
+  - { id: facts,         enabled: true }
+  - { id: objectives,    enabled: true }
+  - { id: work-packages, enabled: true }
+  - { id: consortium,    enabled: true }
+  - { id: publications,  enabled: true }
+  - { id: news,          enabled: true }
+  - { id: patients,      enabled: true }
+  - { id: contact,       enabled: true }
+  - { id: funding,       enabled: true }
+
+# Site settings
+title: PGxMTB – Pharmacogenomics in Molecular Tumour Boards
+description: >-
+  PGxMTB is a European research consortium funded under EP PerMed that brings
+  pharmacogenomics (PGx) into molecular tumour boards to make cancer therapy
+  safer and more effective.
+url: https://roman-tremmel.github.io
+baseurl: /PGxMTB_homepage
+
+# Technical settings – usually no need to change anything below
+markdown: kramdown
+kramdown:
+  input: GFM
+collections:
+  sections:
+    output: false
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

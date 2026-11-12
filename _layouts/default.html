@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} – PGxMTB{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ site.description | strip_newlines | escape }}">
+  {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+  <meta property="og:title" content="{{ site.title | escape }}">
+  <meta property="og:description" content="{{ site.description | strip_newlines | escape }}">
+  <meta property="og:image" content="{{ '/assets/img/pgxmtb-logo.png' | absolute_url }}">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/fonts.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+{% assign enabled_ids = site.homepage | where: "enabled", true | map: "id" %}
+{% assign home = '/' | relative_url %}
+<!-- Top bar with the logo tab hanging over the hero -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-funder" href="https://www.eppermed.eu/" target="_blank" rel="noopener">
+      <span class="topbar-funder-label">Funded by</span>
+      <span class="topbar-funder-name">EP PerMed</span>
+    </a>
+    <a href="{{ home }}" class="logo-tab" aria-label="PGxMTB home">
+      <img src="{{ '/assets/img/pgxmtb-logo.png' | relative_url }}" alt="PGxMTB" width="220" height="43">
+      <span>Pharmacogenomics in<br>Molecular Tumour Boards</span>
+    </a>
+    <nav class="topbar-links" aria-label="Service">
+      {% if enabled_ids contains "news" %}<a href="{{ home }}#news">News</a>{% endif %}
+      {% if enabled_ids contains "contact" %}<a href="{{ home }}#contact">Contact</a>{% endif %}
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+{{ content }}
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <img src="{{ '/assets/img/pgxmtb-logo-white.png' | relative_url }}" alt="PGxMTB" width="120" height="24">
+    <span>&copy; <span id="year">2026</span> PGxMTB consortium</span>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="{{ '/imprint.html' | relative_url }}">Imprint</a>
+      <a href="{{ '/privacy.html' | relative_url }}">Privacy statement</a>
+    </nav>
+  </div>
+</footer>
+
+<script>window.PGXMTB_PUBLICATIONS = {{ site.data.publications | jsonify }};</script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

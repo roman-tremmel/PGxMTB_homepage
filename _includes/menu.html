@@ -1,0 +1,17 @@
+{%- comment -%} Main menu: every enabled section whose file has a "nav" label; highlighted ones last {%- endcomment -%}
+<nav class="mainnav" aria-label="Main">
+  <div class="mainnav-inner">
+    {%- for entry in include.sections %}
+      {%- assign s = site.sections | where: "key", entry.id | first %}
+      {%- if s.nav and s.nav_highlight != true %}
+      <a href="#{{ entry.id }}">{{ s.nav }}</a>
+      {%- endif %}
+    {%- endfor %}
+    {%- for entry in include.sections %}
+      {%- assign s = site.sections | where: "key", entry.id | first %}
+      {%- if s.nav and s.nav_highlight == true %}
+      <a href="#{{ entry.id }}" class="nav-patients">{{ s.nav }}</a>
+      {%- endif %}
+    {%- endfor %}
+  </div>
+</nav>

@@ -1,0 +1,26 @@
+{% assign s = include.section %}
+<section id="work-packages" class="section section-tint">
+  <div class="container">
+    <h2>{{ s.title }}</h2>
+    <div class="wp-grid">
+      {%- for wp in s.items %}
+      <article class="wp" style="--c: var(--{{ wp.color | default: 'wp1' }})">
+        <span class="wp-num">{{ wp.number }}</span>
+        <h3>{{ wp.title }}</h3>
+        {{ wp.text | markdownify }}
+        {%- if wp.tasks %}
+        <details>
+          <summary>Tasks</summary>
+          <ul>
+            {%- for t in wp.tasks %}
+            <li><b>{{ t.id }}</b> {{ t.text }}</li>
+            {%- endfor %}
+          </ul>
+        </details>
+        {%- endif %}
+        <span class="wp-lead">Lead: {{ wp.lead }}</span>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

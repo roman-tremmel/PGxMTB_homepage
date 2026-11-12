@@ -1,0 +1,13 @@
+          <svg viewBox="0 0 300 300">
+            <g stroke="#0C2D58" stroke-width="6" stroke-linecap="round">
+              <line x1="150" y1="150" x2="150" y2="40"/><line x1="150" y1="150" x2="228" y2="72"/>
+              <line x1="150" y1="150" x2="260" y2="150"/><line x1="150" y1="150" x2="228" y2="228"/>
+              <line x1="150" y1="150" x2="150" y2="260"/><line x1="150" y1="150" x2="72" y2="228"/>
+              <line x1="150" y1="150" x2="40" y2="150"/><line x1="150" y1="150" x2="72" y2="72"/>
+            </g>
+            <circle cx="150" cy="150" r="34" fill="#0C2D58"/>
+            <circle cx="150" cy="40" r="20" fill="#0E8A86"/><circle cx="228" cy="72" r="20" fill="#2A63A8"/>
+            <circle cx="260" cy="150" r="20" fill="#6B4F9A"/><circle cx="228" cy="228" r="20" fill="#D0573F"/>
+            <circle cx="150" cy="260" r="20" fill="#A8740F"/><circle cx="72" cy="228" r="20" fill="#3D8241"/>
+            <circle cx="40" cy="150" r="20" fill="#9CA3AF"/><circle cx="72" cy="72" r="20" fill="#9CA3AF"/>
+          </svg>

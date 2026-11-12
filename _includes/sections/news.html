@@ -1,0 +1,16 @@
+{% assign s = include.section %}
+{% assign items = s.items | sort: "date" | reverse %}
+<section id="news" class="section">
+  <div class="container">
+    <h2>{{ s.title }}</h2>
+    <div class="news">
+      {%- for n in items %}
+      <article class="news-item">
+        <time datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ n.date | date: '%d %b %Y' }}</time>
+        <h3>{{ n.title }}</h3>
+        {{ n.text | markdownify }}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

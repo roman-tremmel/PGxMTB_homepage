@@ -1,0 +1,8 @@
+{% assign s = include.section %}
+<section class="facts" aria-label="Key facts">
+  <div class="container facts-grid">
+    {%- for f in s.items %}
+    <div class="fact"><strong>{{ f.value }}</strong><span>{{ f.label }}</span></div>
+    {%- endfor %}
+  </div>
+</section>

@@ -1,0 +1,25 @@
+{%- comment -%} One language version of the "For patients" section {%- endcomment -%}
+{% assign t = include.text %}
+<div data-lang="{{ include.lang }}"{% if include.lang != 'en' %} lang="{{ include.lang }}" hidden{% endif %}>
+  <div class="patients-grid">
+    {%- for c in t.cards %}
+    <article class="patients-card">
+      <h3>{{ c.title }}</h3>
+      {{ c.text | markdownify }}
+    </article>
+    {%- endfor %}
+  </div>
+  <div class="patients-foot">
+    <dl class="glossary">
+      {%- for g in t.glossary %}
+      <div><dt>{{ g.term }}</dt><dd>{{ g.text }}</dd></div>
+      {%- endfor %}
+    </dl>
+    <div class="patients-contact">
+      <h3>{{ t.support.title }}</h3>
+      {{ t.support.text | markdownify }}
+      {% if t.support.button_text %}<a class="btn-patient" href="{{ t.support.button_url }}" target="_blank" rel="noopener">{{ t.support.button_text }}</a>{% endif %}
+      {% if t.support.contact_text %}<a class="more" href="#contact">{{ t.support.contact_text }}</a>{% endif %}
+    </div>
+  </div>
+</div>

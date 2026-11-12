@@ -3,7 +3,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Highlight the menu entry of the section in view
 (function () {
   const links = [...document.querySelectorAll('.mainnav a')];
-  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const sections = links.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
@@ -13,8 +13,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
   sections.forEach(s => observer.observe(s));
 })();
 
-// Publications (data in assets/js/publications.js)
+// Publications (data from _data/publications.yml, inserted by _layouts/default.html)
 (function () {
+  if (!document.getElementById('pub-list')) return;  // section switched off
   const TYPES = { article: 'Journal article', preprint: 'Preprint', conference: 'Conference', other: 'Other' };
   const pubs = (window.PGXMTB_PUBLICATIONS || []).slice().sort((a, b) => b.year - a.year);
   const list = document.getElementById('pub-list');
@@ -85,6 +86,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // For patients: English / German switch. A link to #patienten opens the German version.
 (function () {
   const section = document.getElementById('patients');
+  if (!section) return;  // section switched off
   const buttons = section.querySelectorAll('[data-set-lang]');
   function setLang(lang) {
     section.querySelectorAll('[data-lang]').forEach(el => { el.hidden = el.dataset.lang !== lang; });

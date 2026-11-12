@@ -1,0 +1,22 @@
+{% assign s = include.section %}
+<section id="publications" class="section section-tint">
+  <div class="container">
+    <h2>{{ s.title }}</h2>
+    <div class="pub-toolbar">
+      <div class="pub-filters" role="group" aria-label="Filter by type">
+        <button type="button" class="chip is-active" data-type="all">All <span></span></button>
+        <button type="button" class="chip" data-type="article">Journal articles <span></span></button>
+        <button type="button" class="chip" data-type="preprint">Preprints <span></span></button>
+        <button type="button" class="chip" data-type="conference">Conference contributions <span></span></button>
+      </div>
+      <label class="pub-search">
+        <span class="visually-hidden">Search publications</span>
+        <input type="search" id="pub-search" placeholder="Search title, author, journal">
+      </label>
+    </div>
+    <div id="pub-list" class="pub-list" aria-live="polite">
+      {%- comment -%} Filled by assets/js/main.js; this is the fallback without JavaScript {%- endcomment -%}
+      <noscript><p class="pub-empty">Please enable JavaScript to see the list of publications.</p></noscript>
+    </div>
+  </div>
+</section>

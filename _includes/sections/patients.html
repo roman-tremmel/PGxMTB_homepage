@@ -1,0 +1,18 @@
+{% assign s = include.section %}
+<section id="patients" class="section patients">
+  <div class="container">
+    <div class="patients-head">
+      <div>
+        <span class="patients-badge">{{ s.badge }}</span>
+        <h2 data-lang="en">{{ s.en.title }}</h2>
+        <h2 data-lang="de" lang="de" hidden>{{ s.de.title }}</h2>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language / Sprache">
+        <button type="button" data-set-lang="en" aria-pressed="true">English</button>
+        <button type="button" data-set-lang="de" aria-pressed="false" lang="de">Deutsch</button>
+      </div>
+    </div>
+    {% include sections/patients-lang.html lang="en" text=s.en %}
+    {% include sections/patients-lang.html lang="de" text=s.de %}
+  </div>
+</section>

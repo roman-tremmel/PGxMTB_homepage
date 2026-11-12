@@ -1,0 +1,15 @@
+{% assign s = include.section %}
+<section id="objectives" class="section">
+  <div class="container">
+    <h2 class="center">{{ s.title }}</h2>
+    <div class="tiles">
+      {%- for o in s.items %}
+      <article class="tile" style="--c: var(--{{ o.color | default: 'wp1' }})">
+        {% if o.icon %}{% include icons/{{ o.icon }}.svg %}{% endif %}
+        <h3>{{ o.title }}</h3>
+        {{ o.text | markdownify }}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
